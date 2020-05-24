@@ -3,9 +3,13 @@
 //start should begin with generate password button
 var Start;
 var Upper;
+var UpperArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var Lower;
 var Num;
+var NumArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var Char;
+var CharArray = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", "'", ",", " < ", ".", " > ", "/", " ? "];
+//var chars = "abcdefghijklmnopqrstuvwxyz!@#$ %^&*()-+<>ABCDEFGHIJKLMNOP1234567890";
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -34,6 +38,9 @@ function writePassword() {
   Lower = confirm("Do you want to include lowercase letters?");
   Num = confirm("Do you want to include numbers?");
   Char = confirm("Do you want to include characters?");
+
+
+
   
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
