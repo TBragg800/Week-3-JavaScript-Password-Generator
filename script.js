@@ -95,14 +95,15 @@ function writePassword() {
 
   for ( i = 0; i < Start; i++) {
     var totalChoices = UserInput[Math.floor(Math.random() * UserInput.length)];
-    console.log(totalChoices);
+    
+    alert(totalChoices.length);
   }
   
   
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-  // passwordText.value = password;
+  passwordText.value = password;
 
 }
 
