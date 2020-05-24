@@ -1,6 +1,5 @@
-//generate variables 
-//prompt for start
-//start should begin with generate password button
+
+//Global variables and arrays 
 var Start;
 var Upper;
 UpperArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -13,15 +12,19 @@ CharArray = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_
 var UserInput;
 
 
-// Assignment Code
+//This houses the variable and function call for initiating the password 
+//generating process.
 var generateBtn = document.querySelector("#generate");
+generateBtn.addEventListener("click", writePassword);
 
 
 
-
-// Write password to the #password input
+//This is the primary function that controls the prompts, alerts and 
+//confirms for processing user input.
 function writePassword() {
   
+//This is the initial prompt to obtain user desired password length along with
+//if else statements to handle improper user input.   
   Start = prompt("Please start by selecting a numerical length for your new password between 8 and 128 characters.");
   
     if (!Start) {
@@ -33,7 +36,7 @@ function writePassword() {
 
       alert("You must enter a value between 8 and 128 into this field!");
       return;
-
+//An else statement offering the user a chance to contour character type.
   } else {
   
   Upper = confirm("Do you want to include uppercase letters?");
@@ -42,7 +45,8 @@ function writePassword() {
   Char = confirm("Do you want to include characters?");
   }
 
-  //create all combinations of userInput
+  //This is a series of if else statements to account for all user input
+  //combinations.
   if (Upper && Lower && Num && Char) {
     UserInput = UpperArray.concat(LowerArray, NumArray, CharArray);
   } else 
@@ -91,22 +95,20 @@ function writePassword() {
     alert("You must hit ok to at least 1 option in order to generate your password!");
     return;
   }
-  // console.log(UserInput);
-
-  for ( i = 0; i < Start; i++) {
-    var totalChoices = UserInput[Math.floor(Math.random() * UserInput.length)];
-    
-    alert(totalChoices.length);
+  
+//This for loop allows the users input to loop through the concatenated
+//strings in the character arrays for the user prompted amount of times 
+//to generate the password. The password is then appended to the proper
+//field by using the getElementById method.
+  for (var i = 0; i < Start; i++) {
+    totalChoices = UserInput[Math.floor(Math.random() * UserInput.length)];
+    document.getElementById("password").append(totalChoices);
   }
-  
-  
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+
+
+
 
