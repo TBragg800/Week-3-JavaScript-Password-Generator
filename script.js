@@ -11,7 +11,7 @@ NumArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var Char;
 CharArray = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", "'", ",", " < ", ".", " > ", "/", " ? "];
 var UserInput;
-//var chars = "abcdefghijklmnopqrstuvwxyz!@#$ %^&*()-+<>ABCDEFGHIJKLMNOP1234567890";
+
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -84,28 +84,25 @@ function writePassword() {
   } else 
   if (Num) {
     UserInput = NumArray;
-  }
+  } else
   if (Char) {
     UserInput = CharArray;
   } else {
     alert("You must hit ok to at least 1 option in order to generate your password!");
     return;
   }
-  
-
-
-  console.log(UserInput);
+  // console.log(UserInput);
 
   for ( i = 0; i < Start; i++) {
-    var totalChoices = UserInput[Math.floor(Math.random() * UserInput.length)]
-
+    var totalChoices = UserInput[Math.floor(Math.random() * UserInput.length)];
+    console.log(totalChoices);
   }
-
   
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  
+  // var password = generatePassword();
+  // var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  // passwordText.value = password;
 
 }
 
