@@ -24,7 +24,7 @@ generateBtn.addEventListener("click", writePassword);
 function writePassword() {
   
 //This is the initial prompt to obtain user desired password length along with
-//if else statements to handle improper user input.   
+//an if else statements to handle improper user input.   
   Start = prompt("Please start by selecting a numerical length for your new password between 8 and 128 characters.");
   
     if (!Start) {
