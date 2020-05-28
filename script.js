@@ -22,8 +22,12 @@ generateBtn.addEventListener("click", writePassword);
 //This is the primary function that controls the prompts, alerts and 
 //confirms for processing user input.
 function writePassword() {
-  
-//This is the initial prompt to obtain user desired password length along with
+
+//This clears the previous password as to eliminate overlap between 
+//different passwords.
+  document.getElementById("password").textContent = " ";
+
+  //This is the initial prompt to obtain user desired password length along with
 //an if else statements to handle improper user input.   
   Start = prompt("Please start by selecting a numerical length for your new password between 8 and 128 characters.");
   
@@ -106,7 +110,6 @@ function writePassword() {
   }
 
 }
-
 
 
 
